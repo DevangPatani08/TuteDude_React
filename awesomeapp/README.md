@@ -16,4 +16,4 @@ Here's a guide to creating a counter application using both a class component an
 - Submission Link: Submit the GitHub repo Link in the Submission Box.
 
 ## Assignment -1 Submission
-View the [Counter App](https://youtu.be/AP0fKMrmyKA?si=wKbklcCA3rGCFDb7)
+View the [Counter App](https://tutedude-counter-assignment-1.netlify.app/)
