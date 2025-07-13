@@ -1,0 +1,33 @@
+/* src/Components/Counter_Function.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+.minus_btn, .plus_btn { /* Note: your original code had both buttons with 'minus_btn' */
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease-in-out;
+    padding: 4px 24px;
+}
+
+.minus_btn:hover, .plus_btn:hover {
+    background-color: #e0e0e0;
+}
+
+.numbers {
+    font-size: 5rem;
+    color: #333;
+    min-width: 50px; /* Ensure consistent width */
+    text-align: center;
+    padding: 8px 24px;
+}
