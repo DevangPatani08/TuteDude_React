@@ -1,12 +1,17 @@
 import React from "react";
 
-
-function Contact() {
+const Contact = () => {
     return (
         <div className="super-container">
-            <h1>Get in Touch</h1>
+            <div className="wrapper contact">
+                <h1 className="heading-h1">Get in Touch</h1>
+                <p className="text-contact">
+                    We'd love to hear from you! Reach out to us for any inquiries or collaborations.
+                </p>
+                <button className="btn-learn"> Get In Touch</button>
+            </div>
         </div>
     );
-}
+};
 
 export default Contact;
