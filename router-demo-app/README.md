@@ -1,12 +1,27 @@
-# React + Vite
+## Assignment - 4
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Objective
 
-Currently, two official plugins are available:
+Creating a React application using the React Router in which we make a four-page Home, About, User Info, and Not Found Page. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Problem Description:
 
-## Expanding the ESLint configuration
+Your task is to develop a React application for a shoe store. It allows customers to view available shoes and add them to their shopping cart using the useState hook provided by React. The application should consist of the following key components:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Home and About Page:
+
+Create both pages with your mind, but the UI is attractive. You can choose any website's home and about page, but not copy code, and not create with AI.
+
+#### User Info Page:
+Display details of any person, such as their image, name, age, date of birth, and more.
+
+#### Not Found Page:
+Show not found page if user accesses the page rather than home, about, and user info
+
+#### Header:
+Create a header part with logo and Navlink
+
+### The website should be Responsive according to all screen sizes 
+
+### Assignment - 2 Deployment
+View the [Router Demo App](https://tutedude-router-demo-app-assignment-4.netlify.app/)
