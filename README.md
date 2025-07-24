@@ -134,4 +134,4 @@ Include search bar functionality that is missing from the video. Therefore, impl
 Define Redux actions and reducers to handle state updates for adding items to the cart and removing items from the cart.
 
 ### Assignment - 5 Deployment
-View the [Router Demo App](https://tutedude-router-demo-app-assignment-4.netlify.app/)
+View the [Store Demo App](https://tutedude-store-demo-app-assignment-5.netlify.app/)
