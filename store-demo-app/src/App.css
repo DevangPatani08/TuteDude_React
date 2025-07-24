@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+/* General container padding to prevent content from sticking to edges */
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Custom styling for the Navbar if needed beyond Bootstrap defaults */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #0d6efd !important; /* Example: Primary color for brand */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar .nav-link {
+  font-weight: 500;
+  margin-right: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Adjustments for the Product Cards for consistent height */
+.card.h-100 {
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
-  padding: 2em;
+.card.h-100 .card-img-top {
+  max-height: 200px; /* Limit image height */
+  object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
-.read-the-docs {
-  color: #888;
+.card.h-100 .card-body {
+  flex-grow: 1; /* Allow card body to expand */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push button to bottom */
+}
+
+/* Style for the "Add to Cart" button within product cards */
+.product-card-button {
+  margin-top: auto; /* Pushes the button to the bottom of the card body */
+}
+
+/* Cart Specific Styles */
+.cart-section .card-header {
+  background-color: #0d6efd; /* Bootstrap primary color */
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* Payment Page Specific Styles */
+.payment-details-card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+}
+
+/* Footer specific styles */
+footer {
+  background-color: #343a40; /* Dark background from Bootstrap */
+  color: #f8f9fa;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer a {
+  color: #adb5bd; /* Lighter grey for links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff; /* White on hover */
+}
+
+footer h5 {
+  color: #0d6efd; /* Primary color for headings */
+  font-weight: 600;
 }

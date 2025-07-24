@@ -122,7 +122,7 @@ Footer:
     - Instagram Icon
     - LinkedIn Icon
 
-Use Bootstrap 5 for CSS
+Use Bootstrap 5 for CSS and Vite to create a React application.
 code file structure
 - App.jsx
     - import ./components/Navbar.jsx
