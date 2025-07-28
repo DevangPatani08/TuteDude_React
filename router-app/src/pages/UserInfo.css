@@ -1,0 +1,124 @@
+.user-info {
+    width: 100%;
+    padding: 1rem;
+}
+
+.user-info h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.user-details h3 {
+    color: #3498db;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.user-details p {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.user-bio {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-bio h3 {
+    color: #3498db;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .user-info {
+        padding: 2rem;
+    }
+    
+    .user-profile {
+        flex-direction: row;
+    }
+    
+    .user-image {
+        flex: 1;
+    }
+    
+    .user-details {
+        flex: 2;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .user-info h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .user-info {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* 2K and 4K displays */
+@media (min-width: 2000px) {
+    .user-info {
+        max-width: 1400px;
+    }
+    
+    .user-info h2 {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .user-profile {
+        padding: 3rem;
+    }
+    
+    .user-details h3 {
+        font-size: 2rem;
+    }
+    
+    .user-details p {
+        font-size: 1.2rem;
+    }
+    
+    .user-bio {
+        padding: 2.5rem;
+    }
+    
+    .user-bio h3 {
+        font-size: 1.8rem;
+    }
+    
+    .user-bio p {
+        font-size: 1.2rem;
+    }
+}

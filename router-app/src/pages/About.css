@@ -1,0 +1,137 @@
+.about {
+    width: 100%;
+    padding: 1rem;
+}
+
+.about h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.member-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+}
+
+.team-member h4 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .about {
+        padding: 2rem;
+    }
+    
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-content {
+        flex-direction: row;
+    }
+    
+    .about-text, .about-image {
+        flex: 1;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .team-members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .member-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .about {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* 2K and 4K displays */
+@media (min-width: 2000px) {
+    .about {
+        max-width: 1600px;
+    }
+    
+    .about h2 {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .team-section h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .team-members {
+        gap: 2.5rem;
+    }
+    
+    .member-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .team-member h4 {
+        font-size: 1.5rem;
+    }
+}
