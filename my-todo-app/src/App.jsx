@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
-import './App.css'; // Import the CSS file
+import './App.css';
 
 function App() {
-  const [todos, setTodos] = useState([]); // State to store the list of todos
-  const [inputValue, setInputValue] = useState(''); // State to store the current input field value
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState('');
 
-  // Function to handle adding a new todo
   const handleAddTodo = () => {
-    if (inputValue.trim() === '') {
-      // Show an alert if the input is empty
-      alert('Please enter a To-Do task!');
-    } else {
-      // Add the new todo to the list
-      setTodos([...todos, { id: Date.now(), text: inputValue, completed: false }]);
-      // Clear the input field
-      setInputValue('');
-      // Show success message
-      alert('To-Do added successfully!');
+    const trimmedValue = inputValue.trim();
+    
+    if (!trimmedValue) {
+      setError('Task cannot be empty!');
+      return;
+    }
+    
+    setError('');
+    setTodos([...todos, { 
+      id: Date.now(), 
+      text: trimmedValue, 
+      completed: false 
+    }]);
+    setInputValue('');
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleAddTodo();
     }
   };
 
-  // Function to handle toggling the completion status of a todo
   const handleToggleComplete = (id) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -35,12 +43,21 @@ function App() {
         <input
           type="text"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)} // Update inputValue as user types
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            if (error) setError('');
+          }}
+          onKeyPress={handleKeyPress}
           placeholder="Enter a new To-Do"
-          className="todo-input"
+          className={`todo-input ${error ? 'error' : ''}`}
+          required
         />
-        <button onClick={handleAddTodo} className="add-button">Add To-Do</button>
+        <button onClick={handleAddTodo} className="add-button">
+          Add To-Do
+        </button>
       </div>
+      
+      {error && <p className="error-message">{error}</p>}
 
       <ul className="todo-list">
         {todos.length === 0 ? (

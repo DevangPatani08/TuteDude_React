@@ -128,3 +128,19 @@ h1 {
   text-decoration: line-through; /* Strikethrough for completed tasks */
   color: #888;
 }
+
+.error-message {
+  color: #ff4444;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.todo-input.error {
+  border: 1px solid #ff4444;
+  outline-color: #ff4444;
+}
+
+/* Add this to your existing CSS */
+.todo-input:required:invalid {
+  border-color: #ff4444;
+}
