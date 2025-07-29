@@ -1,12 +1,28 @@
-# React + Vite
+## Assignment - 5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Objective
+Develop a React application for an online shoe store with the capability to manage state using Redux. Implement a payment feature that allows users to transition seamlessly from the shopping cart to a payment page. Users should be able to view their cart contents, return to shopping, and enter credit card details for payment processing.
 
-Currently, two official plugins are available:
+### Problem Description:
+Let's make the app using React-Redux, and Redux Toolkit. The application should consist of the following key components:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Redux Integration:
+Integrate Redux into the React application to manage the state related to the shopping cart.
 
-## Expanding the ESLint configuration
+#### Payment Option: 
+Implement a "Proceed to Payment" button within the shopping cart. Clicking this button should redirect users to the payment page.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Credit Card Payment:
+Include a form on the payment page for users to enter credit card details. 
+
+#### Payment Page: 
+Create a payment page where users can view their shopping cart contents. Provide an option for users to return to their shopping cart if they wish to modify it before proceeding with payment.
+
+#### Search Bar: 
+Include search bar functionality that is missing from the video. Therefore, implement this feature based on your understanding. 
+
+#### Redux Actions and Reducers:
+Define Redux actions and reducers to handle state updates for adding items to the cart and removing items from the cart.
+
+### Assignment - 5 Deployment
+View the [Store Demo App](https://tutedude-store-demo-app-assignment-5.netlify.app/)
