@@ -1,0 +1,217 @@
+/* Extra Small Devices (Phones, 320px and up) */
+@media (min-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    width: 100%;
+    order: 3;
+    margin-top: var(--space-md);
+    display: none;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .nav-link {
+    justify-content: space-between;
+    padding: var(--space-sm);
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: var(--space-xxs);
+  }
+
+  .detail-value {
+    text-align: left;
+  }
+
+  .modal {
+    max-height: 95vh;
+  }
+}
+
+/* Small Devices (Tablets, 576px and up) */
+@media (min-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transaction-actions {
+    flex-direction: row;
+  }
+}
+
+/* Medium Devices (Tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 15.5px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    width: auto;
+    order: initial;
+    margin-top: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-container.desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .chart-container.desktop {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* XX-Large Devices (Larger Desktops, 1440px and up) */
+@media (min-width: 1440px) {
+  html {
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* XXX-Large Devices (4K Displays, 1920px and up) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 1800px;
+    padding: 0 var(--space-xl);
+  }
+
+  .summary-card-title {
+    font-size: var(--text-lg);
+  }
+
+  .summary-card-value {
+    font-size: var(--text-xxl);
+  }
+}
+
+/* Ultra HD Devices (4K and larger, 2560px and up) */
+@media (min-width: 2560px) {
+  html {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 2400px;
+    padding: 0 var(--space-xxl);
+  }
+
+  .card {
+    padding: var(--space-xl);
+  }
+
+  .summary-card-title {
+    font-size: var(--text-xl);
+  }
+
+  .summary-card-value {
+    font-size: var(--text-xxxl);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .app-header,
+  .app-footer,
+  .page-header button,
+  .transaction-actions {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
