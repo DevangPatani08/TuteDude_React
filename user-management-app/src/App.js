@@ -21,6 +21,25 @@ function App() {
 
   const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
+  const validateUniqueUser = (newUser) => {
+    const emailExists = users.some(user => 
+      user.email.toLowerCase() === newUser.email.toLowerCase() &&
+      user.id !== newUser.id); // Exclude current user when editing
+    
+    const usernameExists = users.some(user => 
+      user.username.toLowerCase() === newUser.username.toLowerCase() &&
+      user.id !== newUser.id); // Exclude current user when editing
+
+    const errors = {};
+      if (emailExists) errors.email = 'Email already exists';
+      if (usernameExists) errors.username = 'Username already exists';
+  
+    return {
+      isValid: Object.keys(errors).length === 0,
+      errors
+    };
+  };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -40,13 +59,21 @@ function App() {
 
   const validateForm = () => {
     const errors = {};
+    
     if (!formData.name.trim()) errors.name = 'Name is required';
+    
     if (!formData.email.trim()) {
       errors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = 'Email is invalid';
     }
-    if (!formData.username.trim()) errors.username = 'Username is required';
+
+    if (!formData.username.trim()) {
+      errors.username = 'Username is required';
+    } else if (formData.username.includes(' ')) {
+      errors.username = 'Username cannot contain spaces';
+    }
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -61,7 +88,14 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!validateForm()) return;
+    
+    const { isValid, errors } = validateUniqueUser(formData);
+      if (!isValid) {
+        setFormErrors({ ...formErrors, ...errors });
+        return;
+    }
 
     try {
       setLoading(true);
@@ -118,7 +152,6 @@ function App() {
     setFormErrors({});
   };
 
-  // Render user cards with different layouts based on screen size
   const renderUserCards = () => (
     <Row className="g-3">
       {users.map(user => (
@@ -126,9 +159,7 @@ function App() {
           <Card className="h-100">
             <Card.Body className="d-flex flex-column">
               <div className="d-md-flex align-items-md-center mb-2 mb-md-0">
-                {/* Avatar placeholder - you can replace with actual avatar if available */}
-                <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                     style={{ width: '40px', height: '40px', fontSize: '18px' }}>
+                <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: '40px', height: '40px', fontSize: '18px' }}>
                   {user.name.charAt(0)}
                 </div>
                 <div>
@@ -181,7 +212,6 @@ function App() {
         !loading && <p className="text-center">No users found.</p>
       )}
       
-      {/* Add/Edit User Modal */}
       <Modal show={showModal} onHide={() => {
         setShowModal(false);
         resetForm();
@@ -193,13 +223,7 @@ function App() {
           <Modal.Body>
             <Form.Group className="mb-3">
               <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                isInvalid={!!formErrors.name}
-              />
+              <Form.Control type="text" name="name" value={formData.name} onChange={handleInputChange} isInvalid={!!formErrors.name} />
               <Form.Control.Feedback type="invalid">
                 {formErrors.name}
               </Form.Control.Feedback>
@@ -207,27 +231,15 @@ function App() {
             
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                isInvalid={!!formErrors.email}
-              />
+              <Form.Control type="email" name="email" value={formData.email} onChange={handleInputChange} isInvalid={!!formErrors.email} />
               <Form.Control.Feedback type="invalid">
                 {formErrors.email}
               </Form.Control.Feedback>
             </Form.Group>
-            
+
             <Form.Group className="mb-3">
               <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleInputChange}
-                isInvalid={!!formErrors.username}
-              />
+              <Form.Control type="text" name="username" value={formData.username} onChange={handleInputChange} isInvalid={!!formErrors.username} />
               <Form.Control.Feedback type="invalid">
                 {formErrors.username}
               </Form.Control.Feedback>
@@ -251,8 +263,7 @@ function App() {
           </Modal.Footer>
         </Form>
       </Modal>
-      
-      {/* Delete Confirmation Modal */}
+
       <Modal show={showDeleteConfirm} onHide={() => setShowDeleteConfirm(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Delete</Modal.Title>
