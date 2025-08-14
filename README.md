@@ -244,5 +244,4 @@ Create a food website named Food-Fusion. This website uses the following concept
 - The website should be responsive
 
 ### Assignment - 8 Deployment
-View the [Food-Fusion App](https://tutedude-food-fusion-app-assignment-8.netlify.app/)#   T u t e D u d e _ R e a c t  
- 
+View the [Food-Fusion App](https://tutedude-food-fusion-app-assignment-8.netlify.app/)

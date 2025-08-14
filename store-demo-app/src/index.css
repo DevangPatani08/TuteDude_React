@@ -1,0 +1,21 @@
+/* index.css */
+
+/* Import Google Fonts - optional, but nice for custom typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Light background for the whole app */
+}
+
+/* Ensure Font Awesome icons are styled correctly if you're using them */
+.fa-facebook,
+.fa-twitter,
+.fa-instagram,
+.fa-linkedin {
+  color: white; /* Example: make social icons white in the footer */
+  margin-right: 10px;
+}
